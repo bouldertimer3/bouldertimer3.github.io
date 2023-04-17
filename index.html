@@ -24,7 +24,13 @@
 		var beep1 = new Audio('beep-1.mp3');
 		var beep2 = new Audio('countdown.mp3');
 		function startCountdown() {
-			var seconds = 300;
+			var seconds;
+			if (count == 0) {
+				seconds = 10;
+			} else {
+				seconds = 300;
+			}
+			count++;
 			var countdownTimer = setInterval(function() {
 				seconds--;
 				if (seconds == 60) {
